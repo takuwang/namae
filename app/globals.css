@@ -33,6 +33,10 @@ body {
 .result-panel { position:relative; min-height:550px; overflow:hidden; border:1px solid rgba(34,43,47,.11); border-radius:30px; background:rgba(255,254,249,.87); padding:clamp(1.5rem,4vw,2.5rem); box-shadow:0 24px 80px rgba(37,42,49,.1); }
 .result-panel::after { content:'名'; position:absolute; right:-1rem; bottom:-4rem; z-index:-1; color:rgba(34,43,47,.025); font-family:serif; font-size:17rem; line-height:1; }
 .brush-circle { display:grid; place-items:center; width:3rem; height:3rem; border:1px solid rgba(163,58,49,.35); border-radius:50% 46% 52% 44%; color:var(--vermilion); font-family:serif; font-size:1.25rem; transform:rotate(-6deg); }
+.furigana-preview { display:flex; align-items:flex-end; gap:.12rem; margin-top:1.35rem; color:rgba(34,43,47,.62); font-family:'Noto Serif KR','Noto Serif JP',serif; font-size:1.05rem; font-weight:700; letter-spacing:.03em; }
+.furigana-preview > span { margin-right:.18rem; }
+.furigana-preview ruby { ruby-align:center; }
+.furigana-preview rt { color:var(--vermilion); font-family:'Noto Serif JP',serif; font-size:.62rem; font-weight:700; letter-spacing:.08em; }
 .reading-chip { display:inline-flex; align-items:center; gap:.55rem; border:1px solid rgba(34,43,47,.12); border-radius:12px; background:#f6f3eb; padding:.55rem .7rem; }
 .reading-chip b { font-size:1.25rem; }
 .reading-chip span { font-size:.8rem; font-weight:800; color:rgba(34,43,47,.58); }

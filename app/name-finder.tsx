@@ -5,6 +5,7 @@ import { ArrowRight, BookOpenText, Check, Copy, RotateCcw, Sparkles } from 'luci
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { toHiragana } from '@/lib/hiragana';
 import { kanjiMap, type KanjiEntry } from '@/lib/kanji-data';
 
 type NameOption = { value: string; parts: string[]; score: number };
@@ -165,6 +166,15 @@ export default function Home() {
                 <div className="mt-2 flex flex-wrap items-end gap-x-3 gap-y-1">
                   <strong className="font-serif text-[clamp(2.6rem,7vw,5.4rem)] leading-none tracking-[-0.055em] text-ink">{surname}{choice.value}</strong>
                   <Badge className="mb-1.5 bg-vermilion text-white">추천</Badge>
+                </div>
+                <div className="furigana-preview" aria-label={'히라가나 표기 ' + choice.parts.map(toHiragana).join('')}>
+                  <span>{surname}</span>
+                  {choice.parts.map((part, index) => (
+                    <ruby key={part + index}>
+                      {part}
+                      <rt>{toHiragana(part)}</rt>
+                    </ruby>
+                  ))}
                 </div>
               </div>
 
